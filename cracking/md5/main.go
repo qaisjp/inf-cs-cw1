@@ -192,5 +192,9 @@ func main() {
 	}
 	fmt.Println("done!")
 
+	if err := writer.Flush(); err != nil {
+		panic(err)
+	}
+
 	fmt.Printf("\nDuration: %s", time.Now().Sub(from))
 }
